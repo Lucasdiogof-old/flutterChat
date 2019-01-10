@@ -28,6 +28,20 @@ Future<Null> _estaLogado() async {
   }
 }
 
+_salvarTexto(String text) async {
+  await _estaLogado();
+  _enviarMensagem(texto: text);
+}
+
+void _enviarMensagem({String texto, String imgUrl}) {
+  Firestore.instance.collection("mensagens").add({
+    "texto": texto,
+    "imgUrl": imgUrl,
+    "nomeRemetente": googleSignIn.currentUser.displayName,
+    "imgRemetente": googleSignIn.currentUser.photoUrl
+  });
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -89,7 +103,15 @@ class TextComposer extends StatefulWidget {
 }
 
 class _TextComposerState extends State<TextComposer> {
-  bool digitou = false;
+  final _controleTexto = TextEditingController();
+  bool _digitou = false;
+
+  void _limpar() {
+    _controleTexto.clear();
+    setState(() {
+      _digitou = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,12 +129,17 @@ class _TextComposerState extends State<TextComposer> {
             ),
             Expanded(
               child: TextField(
+                controller: _controleTexto,
                 decoration:
                     InputDecoration.collapsed(hintText: "Enviar uma Mensagem"),
                 onChanged: (text) {
                   setState(() {
-                    digitou = text.length > 0;
+                    _digitou = text.length > 0;
                   });
+                },
+                onSubmitted: (texto) {
+                  _salvarTexto(texto);
+                  _limpar();
                 },
               ),
             ),
@@ -121,7 +148,12 @@ class _TextComposerState extends State<TextComposer> {
               child: IconButton(
                   color: Colors.green,
                   icon: Icon(Icons.send),
-                  onPressed: digitou ? () {} : null),
+                  onPressed: _digitou
+                      ? () {
+                          _salvarTexto(_controleTexto.text);
+                          _limpar();
+                        }
+                      : null),
             )
           ],
         ),
