@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "943988578552",
+    "firebase_url": "https://flutterbatepapo.firebaseio.com",
+    "project_id": "flutterbatepapo",
+    "storage_bucket": "flutterbatepapo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943988578552:android:b9f687ff255f9c7c",
+        "android_client_info": {
+          "package_name": "com.example.chatonline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943988578552-s9bnk9r843313fss3nclb2cno20a19rr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chatonline",
+            "certificate_hash": "fe7d016a84cceeba16a59a3663b7841db70efcf2"
+          }
+        },
+        {
+          "client_id": "943988578552-uspko3agcsi5180od27gns0edpthqsb5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEbFgNUqbmwj6J2rNmYIjjxvlAY3CQS3U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943988578552-uspko3agcsi5180od27gns0edpthqsb5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
