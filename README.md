@@ -1,6 +1,6 @@
 # chat_online
 
-A new Flutter application.
+Aplicativo que permite que os usuários conversem por chat.
 
 ## Getting Started
 
