@@ -1,6 +1,6 @@
 # chat_online
 
-Aplicativo que permite que os usuários conversem por chat.
+Aplicativo que permite que os usuários conversem por chat, o aplicativo foi feito em conjunto com o Firebase.
 
 ## Getting Started
 
