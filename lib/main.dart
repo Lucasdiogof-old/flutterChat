@@ -8,7 +8,7 @@ void main() async {
 }
 
 final ThemeData temaPadrao =
-    new ThemeData(primarySwatch: Colors.green, accentColor: Colors.grey[400]);
+    new ThemeData(primarySwatch: Colors.green, accentColor: Colors.grey[300]);
 
 final googleSignIn = GoogleSignIn();
 final auth = FirebaseAuth.instance;
